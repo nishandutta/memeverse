@@ -19,9 +19,20 @@ export default function MemeDetails() {
     const fetchMeme = async () => {
       const res = await fetch('https://api.imgflip.com/get_memes')
       const memes = await res.json()
-      const memeData = memes.data.memes.find(
-        (m: { id: ParamValue }) => m.id === id
-      )
+      console.log('new memes', memes)
+
+      let memeData
+      memeData = memes.data.memes.find((m: { id: ParamValue }) => m.id === id)
+      console.log('meme status', meme)
+      if (!meme) {
+        const localMeme = localStorage.getItem('uploadedMemes') as string
+        const parsedMemes = JSON.parse(localMeme)
+        console.log('localmeme', parsedMemes)
+        memeData = parsedMemes.find(
+          (meme: { id: unknown }) => String(meme.id) === String(id)
+        )
+        console.log('memedata', memeData)
+      }
       setMeme(memeData)
 
       // Load likes & comments from localStorage

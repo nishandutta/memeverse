@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@tailwind utilities;
+
+:root {
+  --background-light: #f5e8dd;
+  --background-dark: #222831;
+  --text-light: #102c57;
+  --text-dark: #f5e8dd;
+}
+
+html.light {
+  --background-color: var(--background-light);
+  --text-color: var(--text-light);
+}
+
+html.dark {
+  --background-color: var(--background-dark);
+  --text-color: var(--text-dark);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

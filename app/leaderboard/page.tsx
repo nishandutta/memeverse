@@ -86,9 +86,6 @@ export default function LeaderboardPage() {
               className='w-full rounded'
             />
             <p className='mt-2 text-center text-pink-50'>{meme.name}</p>
-            <p className='text-center text-sm text-gray-400'>
-              ❤️ {meme.likes} Likes
-            </p>
           </div>
         ))}
       </div>

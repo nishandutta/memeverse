@@ -81,14 +81,6 @@ export default function MemeExplorer() {
     <div className='p-0 md:p-6'>
       <h1 className='text-3xl font-bold mb-4'>Meme Explorer</h1>
 
-      {/* Search Bar */}
-      <input
-        type='text'
-        placeholder='Search memes...'
-        className='p-2 w-full mb-4 bg-gray-700 rounded text-white'
-        onChange={(e) => handleSearch(e.target.value)}
-      />
-
       {/* User Uploaded Memes */}
       <div className='pb-8'>
         <h2 className='text-xl font-bold mt-4'>Your Uploaded Memes</h2>
@@ -102,6 +94,14 @@ export default function MemeExplorer() {
           </div>
         )}
       </div>
+
+      {/* Search Bar */}
+      <input
+        type='text'
+        placeholder='Search memes...'
+        className='p-2 w-full mb-4 bg-gray-700 rounded text-white'
+        onChange={(e) => handleSearch(e.target.value)}
+      />
 
       {/* Category Filter */}
       <div className='mb-4 grid grid-cols-2 md:flex md:space-x-4 gap-2'>

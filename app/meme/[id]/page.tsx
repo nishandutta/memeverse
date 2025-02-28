@@ -21,7 +21,8 @@ export default function MemeDetails() {
 
       let memeData
       memeData = memes.data.memes.find((m: { id: ParamValue }) => m.id === id)
-      if (!meme) {
+      if (!memeData) {
+        console.log('yes')
         const localMeme = localStorage.getItem('uploadedMemes') as string
         const parsedMemes = JSON.parse(localMeme)
         memeData = parsedMemes.find(

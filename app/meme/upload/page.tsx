@@ -55,7 +55,7 @@ export default function MemeUpload() {
 
       try {
         const res = await axios.post(
-          `https://api.imgbb.com/1/upload?key=e135d0b3b069fc4a03f7e010a736b36d`,
+          `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_MEME_API_KEY}`,
           new URLSearchParams({ image: base64Image }),
           { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
         )

@@ -13,25 +13,20 @@ export default function MemeDetails() {
   const [comments, setComments] = useState<string[]>([])
   const [newComment, setNewComment] = useState('')
   const [liked, setLiked] = useState(false)
-  console.log('meme', meme)
 
   useEffect(() => {
     const fetchMeme = async () => {
       const res = await fetch('https://api.imgflip.com/get_memes')
       const memes = await res.json()
-      console.log('new memes', memes)
 
       let memeData
       memeData = memes.data.memes.find((m: { id: ParamValue }) => m.id === id)
-      console.log('meme status', meme)
       if (!meme) {
         const localMeme = localStorage.getItem('uploadedMemes') as string
         const parsedMemes = JSON.parse(localMeme)
-        console.log('localmeme', parsedMemes)
         memeData = parsedMemes.find(
           (meme: { id: unknown }) => String(meme.id) === String(id)
         )
-        console.log('memedata', memeData)
       }
       setMeme(memeData)
 

@@ -6,7 +6,6 @@ import { MemeType } from '@/types/memeTypes'
 
 export default function HomePage() {
   const [trendingMemes, setTrendingMemes] = useState<MemeType[]>([])
-  console.log(trendingMemes)
 
   useEffect(() => {
     axios.get('https://api.imgflip.com/get_memes').then((response) => {

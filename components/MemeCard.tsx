@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { MemeType } from '@/types/memeTypes'
 
 export default function MemeCard({ meme }: { meme: MemeType }) {
-  console.log('meme', meme)
   return (
     <Link href={`/meme/${meme.id}`}>
       <motion.div
